@@ -1,22 +1,16 @@
-<%@ page contentType="text/html; charset=SJIS"
+<%@ page contentType="text/html; charset=UTF-8"
 	import="java.net.URLDecoder"%>
 <%
-// ƒZƒbƒVƒ‡ƒ“‚Ì—LŒøŠúŒÀÝ’è
 session.setMaxInactiveInterval(180);
 String logout = (String) request.getParameter("logout");
 String message = null;
 if (logout != null && logout.equals("true")) {
-	// ƒZƒbƒVƒ‡ƒ“‚Ì”jŠü
 	session.invalidate();
-
 } else {
-	// GETƒpƒ‰ƒ[ƒ^‚©‚çuƒƒbƒZ[ƒWv‚ðŽæ‚èo‚·
 	message = (String) request.getAttribute("message");
 	if (message != null) {
-		// uƒƒbƒZ[ƒWv‚ª‘—M‚³‚ê‚Ä‚¢‚½‚Ì‚ÅAƒZƒbƒVƒ‡ƒ“‚É•Û‘¶
 		session.setAttribute("message", message);
 	} else {
-		// uƒƒbƒZ[ƒWv‚ª‘—M‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚Ì‚ÅAƒZƒbƒVƒ‡ƒ“‚©‚çƒƒbƒZ[ƒW‚ðŽæ“¾
 		message = (String) session.getAttribute("message");
 	}
 }
@@ -37,11 +31,10 @@ ul {
 <body>
 	<form method="GET" action="/jsp/registerMessage.jsp">
 		<ul>
-			<li><label for="message">ƒƒbƒZ[ƒW</label>
-			<input type="text" name="message" value="<%=message%>" />
-			</li>
-			<li><input type="submit" value="“o˜^" />
-			<a href="/jsp/registerMessage.jsp?message=true">ƒƒOƒAƒEƒg</a></li>
+			<li><label for="message">ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸</label> <input type="text"
+				name="message" value="<%=message%>" /></li>
+			<li><input type="submit" value="ç™»éŒ²" /> <a
+				href="/jsp/registerMessage.jsp?message=true">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</a></li>
 		</ul>
 	</form>
 </body>
