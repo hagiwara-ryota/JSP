@@ -29,12 +29,12 @@ ul {
 </style>
 </head>
 <body>
-	<form method="GET" action="/jsp/registerMessage.jsp">
+	<form method="GET" action="/jspfile/curriculum/registerMessage.jsp">
 		<ul>
 			<li><label for="message">メッセージ</label> <input type="text"
 				name="message" value="<%=message%>" /></li>
 			<li><input type="submit" value="登録" /> <a
-				href="/jsp/registerMessage.jsp?message=true">ログアウト</a></li>
+				href="/jspfile/curriculum/registerMessage.jsp?logout=true">ログアウト</a></li>
 		</ul>
 	</form>
 </body>
