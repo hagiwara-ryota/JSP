@@ -7,7 +7,7 @@ String message = null;
 if (logout != null && logout.equals("true")) {
 	session.invalidate();
 } else {
-	message = (String) request.getAttribute("message");
+	message = (String) request.getParameter("message");
 	if (message != null) {
 		session.setAttribute("message", message);
 	} else {
@@ -32,10 +32,10 @@ ul {
 	<form method="GET" action="/jspfile/curriculum/registerMessage.jsp">
 		<ul>
 			<li><label for="message">メッセージ</label> <input type="text"
-				name="message" value="<%=message%>" /></li>
-			<li><input type="submit" value="登録" /> <a
-				href="/jspfile/curriculum/registerMessage.jsp?logout=true">ログアウト</a></li>
+				name="message" value="<%= message %>" /></li>
+			<li><input type="submit" value="登録" /> </li>
 		</ul>
 	</form>
+	<a href="/jspfile/curriculum/registerMessage.jsp?logout=true">ログアウト</a>
 </body>
 </html>
